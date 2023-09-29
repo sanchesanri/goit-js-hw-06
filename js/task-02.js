@@ -7,45 +7,20 @@ const ingredients = [
   'Condiments',
 ];
 
-const bodyEl = document.querySelector("body")
+const ulRef = document.querySelector('#ingredients');
+const createLi = document.createElement('li');
 
-console.log(bodyEl);
-// LI
+const createFullElementLi = arr => 
+arr.map(el=>{
+    const createLi = document.createElement('li');
+    createLi.textContent = el;
+    createLi.classList.add('item');
+    return createLi
+  })
 
-// const item = function (callback) {
-//   for (let i = 0; i < callback.length; i++) {
-//     const element = callback[i];
-//     const itemRef = document.createElement('li');
-//     itemRef.classList.add('item')
-//     itemRef.textContent = element
-//     // console.log(element);
-//     console.log(itemRef);
-//     return itemRef
-//   }
-//   // return document.createElement(itemRef)
-// }
+function addElementsLi (arr, callback) {
+  const arrLi = callback(arr)
+  ulRef.prepend(...arrLi)
+}
 
-// item(ingredients);
-// document.createElement(item)
-// console.log(item);
-
-
-// Вставляем Li
-const ulEl = document.querySelector('#ingredients');
-// ulEl.appendChild(itemRef)
-
-console.log(ulEl);
-
-const itemRef = ingredients.forEach((ingredient) => {
-  const itemAdd = document.createElement('li');
-  itemAdd.classList.add('item');
-  itemAdd.textContent = ingredient;
-
-  ulEl.append(itemAdd)
-});
-
-
-
-
-
-
+addElementsLi(ingredients, createFullElementLi)
