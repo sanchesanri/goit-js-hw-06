@@ -1,19 +1,12 @@
-/*
-*Напиши скрипт, который реагирует на изменение значения input#font-size-control (событие input) и изменяет инл-стиль span#text обновляя свойство font-size. В результате при перетаскивании ползунка будет меняться размер текста.
-
-<input id="font-size-control" type="range" min="16" max="96" />
-<br />
-<span id="text">Abracadabra!</span>
-*/
-
-const inputRef = document.querySelector('input');
+const inputRef  = document.querySelector('#font-size-control');
 const textRef = document.querySelector('#text');
+const numberSizeRef = document.querySelector('.span-min-max')
 
-inputRef.addEventListener('change', function (event) {
-    textRef.style.fontSize = event.currentTarget.value + 'px'
-    // console.log(event.currentTarget.value + 'px');
-    // console.log(inputRef.value);
-})
+inputRef.addEventListener('input', onInputChange);
 
-// textRef.style.fontSize = '10' + px;
+function onInputChange(ev) {
+    const inputValue = inputRef.value;
 
+    numberSizeRef.textContent = `${Number(inputValue)} px`
+    textRef.style.fontSize = `${inputValue}px`
+}

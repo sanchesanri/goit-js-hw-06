@@ -1,28 +1,14 @@
-const inputEl = document.querySelector('#name-input');
-const txtSpanEl = document.querySelector('#name-output');
+const inputRef = document.querySelector('#name-input');
+const spanRef = document.querySelector('#name-output');
 
-// Напиши скрипт который, при наборе текста в инпуте input#name-input (событие input), подставляет его текущее значение в span#name-output. Если инпут пустой, в спане должна отображаться строка "Anonymous".
+const inputValue = inputRef.addEventListener('input', onCurrentTargetInput)
 
-inputEl.addEventListener('input', (event) => {
-    event.currentTarget.value === ''
-        ? (txtSpanEl.textContent = 'Anonymous')
-        : (txtSpanEl.textContent = event.currentTarget.value)
-        console.log(event.currentTarget.value);
-});
+function onCurrentTargetInput (ev) {
+    const inputValue = ev.currentTarget.value
+    return inputValue ? spanRef.textContent = inputValue : spanRef.textContent = 'Anonymous';
 
-
-// const inputClick = inputEl.addEventListener('input', ()=>{
-//     return event.currentTarget.value === '' ? txtSpanEl.textContent = "Anonymous" : txtSpanEl.textContent = event.currentTarget.value
-// });
-
-// const inputClick = inputEl.addEventListener('input', textValue);
-
-// function textValue(event) {
-// 1-first method
-//     return event.currentTarget.value === '' ? txtSpanEl.textContent = "Anonymous" : txtSpanEl.textContent = event.currentTarget.value
-// 2-second method
-// if(event.currentTarget.value === ''){
-//     return txtSpanEl.textContent = "Anonymous"
-// }return txtSpanEl.textContent = event.currentTarget.value
-
-// }
+      // if(!(inputValue)){
+    //     return spanRef.textContent = 'Anonymous'
+    // }
+    // spanRef.textContent = inputValue
+}

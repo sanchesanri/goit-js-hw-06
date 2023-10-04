@@ -26,6 +26,7 @@ button {
 li{
 color: rgba(12, 12, 102, 0.8);  
 list-style-type: square;
+list-style: none;
 }
 
 li::marker{
@@ -33,12 +34,29 @@ li::marker{
 }
 
 .gallery{
-  display: flex;
+  /* display: flex; */
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
+  display: grid;
 }
 
 
 .item__img{
   width: 300px;
+}
+.span-min-max{
+  font-size: 40px;
+  margin-left: 20px;
+}
+
+#boxes{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.coloredSquare{
+  margin-left: 5px;
+  border: 1px solid teal;
 }
