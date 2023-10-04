@@ -13,9 +13,6 @@ function createMarkup(ev) {
     //   createBoxes(inputRef.value)
 }
 
-
-
-
 function createAnotherBoxes(amount) {
     const quantityBoxes = Number(amount);
 
