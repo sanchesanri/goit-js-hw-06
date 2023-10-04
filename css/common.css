@@ -44,3 +44,19 @@ li::marker{
 .item__img{
   width: 300px;
 }
+.span-min-max{
+  font-size: 40px;
+  margin-left: 20px;
+}
+
+#boxes{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.coloredSquare{
+  margin-left: 5px;
+  border: 1px solid teal;
+}
